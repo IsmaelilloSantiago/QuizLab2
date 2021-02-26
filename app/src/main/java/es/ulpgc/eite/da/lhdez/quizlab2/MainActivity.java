@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
   private TextView questionText, replyText;
   private String[] questionArray;
   private int[] replyArray;
+  int i = 0;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
       @Override
       public void onClick(View view) {
+
         trueButtonCliecked( view);
       }
     });
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void initLayoutContent() {
-    questionText.setText(questionArray[0]);
+    questionText.setText(questionArray[i]);
 
   }
 
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void trueButtonCliecked(View view) {
-    if(replyArray[0] == 1) {
+    if(replyArray[i] == 1) {
       replyText.setText(R.string.correct_text);
     } else {
       replyText.setText(R.string.incorrect_text);
@@ -96,18 +98,23 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void falseButtonCliecked(View view) {
-    if(replyArray[0] == 0) {
+
+    if(replyArray[i] == 0) {
       replyText.setText(R.string.correct_text);
     } else {
       replyText.setText(R.string.incorrect_text);
     }
   }
 
+
+
   public void cheatButtonCliecked(View view) {
 
   }
 
   public void nextButtonCliecked(View view) {
+        i++;
+        questionText.setText(questionArray[i]);
 
+      }
   }
-}
