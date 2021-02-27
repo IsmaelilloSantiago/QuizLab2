@@ -1,5 +1,6 @@
   package es.ulpgc.eite.da.lhdez.quizlab2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
   private TextView questionText, replyText;
   private String[] questionArray;
   private int[] replyArray;
-  int i = 0;
+  private int i = 0;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -79,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
 
     cheatButton=findViewById(R.id.cheatButton);
     nextButton=findViewById(R.id.nextButton);
-    trueButton=findViewById(R.id.trueButton);
-    falseButton=findViewById(R.id.falseButton);
+    trueButton=findViewById(R.id.yesButton);
+    falseButton=findViewById(R.id.noButton);
 
   }
 
@@ -109,18 +110,21 @@ public class MainActivity extends AppCompatActivity {
 
 
   public void cheatButtonCliecked(View view) {
+    Intent siguiente = new Intent(this,Cheat.class);
+    startActivity(siguiente);
 
   }
 
   public void nextButtonCliecked(View view) {
-        
-
-        if(i != questionArray.length){
-          i++;
+        if (i != questionArray.length-1){
+          i ++;
           questionText.setText(questionArray[i]);
         }else{
-          i=0;
+          i = 0;
           questionText.setText(questionArray[i]);
         }
+
+
+
       }
   }

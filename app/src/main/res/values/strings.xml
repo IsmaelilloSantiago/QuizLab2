@@ -8,6 +8,9 @@
     <string name="next_button_text">Next</string>
     <string name="correct_text">Correct</string>
     <string name="incorrect_text">Incorrect</string>
+    <string name="pregunta_cheat">¿Desea ver la respuesta?</string>
+    <string name="si">SI</string>
+    <string name="no">NO</string>
 
     <string-array name="question_array">
         <item>Question #1: True</item>
