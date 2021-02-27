@@ -113,8 +113,14 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void nextButtonCliecked(View view) {
-        i++;
-        questionText.setText(questionArray[i]);
+        
 
+        if(i != questionArray.length){
+          i++;
+          questionText.setText(questionArray[i]);
+        }else{
+          i=0;
+          questionText.setText(questionArray[i]);
+        }
       }
   }
